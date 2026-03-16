@@ -105,7 +105,6 @@ function endGame() {
 // 3. 輸入比對
 input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && gameRunning) {
-        // 使用 toLowerCase() 讓大小寫輸入都可通 (選用)
         const userValue = input.value.trim();
         const foundIndex = activeWords.findIndex(w => w.text === userValue);
 
@@ -114,10 +113,23 @@ input.addEventListener('keydown', (e) => {
             activeWords.splice(foundIndex, 1);
             score += 10;
             scoreDisplay.textContent = score;
-            
-            // 【修正點 2】加分後一定要執行檢查升級
             checkLevelUp();
         }
-        input.value = '';
+        
+        input.value = ''; // 清空輸入框
+        
+        // --- 強制聚焦優化 ---
+        // 即使按下 Enter，也強制讓輸入框保持在「被點擊」的狀態
+        setTimeout(() => {
+            input.focus();
+        }, 10); 
+    }
+});
+
+// 2. 加入「自動抓回焦點」邏輯
+// 當遊戲正在進行時，如果玩家不小心點到背景，立刻把焦點抓回輸入框
+document.addEventListener('click', () => {
+    if (gameRunning) {
+        input.focus();
     }
 });
