@@ -1,4 +1,4 @@
-const wordList = ["teppanyaki", "young", "YCC", "old generation", "sagging-man", "dang face", "french fry", "booth", "freestyle", "freshness", "CORTIS", "Martin", "James", "Seonghyeon", "Keonho", "Juhoon"];
+const wordList = ["teppanyaki", "young", "YCC", "old generation", "sagging-man", "dang face", "french fries", "booth", "freestyle", "freshness", "CORTIS", "Martin", "James", "Seonghyeon", "Keonho", "Juhoon"];
 const wordLayer = document.getElementById('word-layer');
 const input = document.getElementById('word-input');
 const scoreDisplay = document.getElementById('score');
