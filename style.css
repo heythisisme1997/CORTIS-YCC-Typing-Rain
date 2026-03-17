@@ -65,36 +65,8 @@ body {
     z-index: 100;
 }
 
-/* --- 手機版優化區塊 --- */
-@media screen and (max-width: 768px) {
-    /* 1. 放大掉落的單字，讓手機更好辨識 */
-    .word {
-        font-size: 28px; /* 比電腦版大一點 */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* 增加陰影避免被背景吃掉 */
-    }
-
-    /* 2. 調整上方資訊欄，避免重疊 */
-    #score-board, #lives-display {
-        font-size: 18px;
-        left: 10px;
-    }
-    
-    #lives-display {
-        top: 50px; /* 縮小間距 */
-    }
-
-    /* 3. 重要！調整輸入框位置與大小 */
-    #word-input {
-        bottom: 20%; /* 將輸入框往上抬一點，避免被手機虛擬鍵盤完全遮住 */
-        width: 80%;  /* 讓輸入框寬一點，好點擊 */
-        font-size: 24px;
-        padding: 12px;
-    }
-
-    /* 4. 開始畫面的文字大小調整 */
-    #start-screen h1 {
-        font-size: 32px;
-        text-align: center;
-        padding: 0 20px;
-    }
+/* 紅色特殊單字樣式 */
+.word.special-red {
+    color: #ff4757; /* 鮮豔的紅色 */
+    font-weight: 900;
 }
